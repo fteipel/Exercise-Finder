@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Exercise } from "../types/exercise";
 
 const TARGET_ICONS: Record<string, string> = {
-  abs: "⭕",
+  abs: "🤸",
   abductors: "🦵",
   adductors: "🦵",
   biceps: "💪",
@@ -14,16 +14,16 @@ const TARGET_ICONS: Record<string, string> = {
   forearms: "🦾",
   glutes: "🍑",
   hamstrings: "🦵",
-  lats: "🔙",
-  "levator scapulae": "🔙",
-  pectorals: "💪",
+  lats: "🏊",
+  "levator scapulae": "💆",
+  pectorals: "🫁",
   quads: "🦵",
-  "serratus anterior": "💪",
-  spine: "🦴",
+  "serratus anterior": "🥊",
+  spine: "🏊",
   "traps (upper)": "🏋️",
   traps: "🏋️",
-  triceps: "💪",
-  "upper back": "🔙",
+  triceps: "🤜",
+  "upper back": "🏊",
 };
 
 const EQUIPMENT_COLORS: Record<string, string> = {
