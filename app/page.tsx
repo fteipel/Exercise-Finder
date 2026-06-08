@@ -50,12 +50,12 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-3 tracking-tight">
+      <div className="max-w-7xl mx-auto px-4 py-6 sm:py-12">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2 sm:mb-3 tracking-tight">
             💪 Übungs-Finder
           </h1>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-500 text-base sm:text-lg">
             Wähle einen Körperbereich und entdecke passende Übungen
           </p>
         </div>
@@ -86,36 +86,38 @@ export default function HomePage() {
 
         {selected && (
           <section>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
-              <h2 className="text-2xl font-bold text-gray-800 shrink-0">
-                {BODY_PART_DE[selected] ?? selected}
-              </h2>
-
-              {!loading && exercises.length > 0 && (
-                <div className="flex items-center gap-3 flex-1">
-                  <div className="relative flex-1 max-w-sm">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                      🔍
-                    </span>
-                    <input
-                      type="text"
-                      value={query}
-                      onChange={(e) => setQuery(e.target.value)}
-                      placeholder="Name, Muskel oder Equipment…"
-                      className="w-full pl-9 pr-8 py-2 text-sm border border-gray-200 rounded-full bg-white shadow-sm focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-300"
-                    />
-                    {query && (
-                      <button
-                        onClick={() => setQuery("")}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs"
-                      >
-                        ✕
-                      </button>
-                    )}
-                  </div>
+            <div className="mb-6">
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
+                  {BODY_PART_DE[selected] ?? selected}
+                </h2>
+                {!loading && exercises.length > 0 && (
                   <span className="text-sm text-gray-500 shrink-0">
                     {filtered.length} / {exercises.length} Übungen
                   </span>
+                )}
+              </div>
+
+              {!loading && exercises.length > 0 && (
+                <div className="relative w-full sm:max-w-sm">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                    🔍
+                  </span>
+                  <input
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Name, Muskel oder Equipment…"
+                    className="w-full pl-9 pr-8 py-2.5 text-sm border border-gray-200 rounded-full bg-white shadow-sm focus:outline-none focus:border-indigo-400 focus:ring-1 focus:ring-indigo-300"
+                  />
+                  {query && (
+                    <button
+                      onClick={() => setQuery("")}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 min-h-[44px] min-w-[44px] flex items-center justify-center"
+                    >
+                      ✕
+                    </button>
+                  )}
                 </div>
               )}
             </div>

@@ -12,7 +12,7 @@ interface Props {
 export default function ExerciseGrid({ exercises, loading, error }: Props) {
   if (loading) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         {Array.from({ length: 8 }).map((_, i) => (
           <div key={i} className="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse">
             <div className="h-48 bg-gray-200" />
@@ -46,7 +46,7 @@ export default function ExerciseGrid({ exercises, loading, error }: Props) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
       {exercises.map((exercise) => (
         <ExerciseCard key={exercise.id} exercise={exercise} />
       ))}
