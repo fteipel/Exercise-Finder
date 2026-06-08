@@ -15,15 +15,15 @@ const TARGET_ICONS: Record<string, string> = {
   glutes: "🍑",
   hamstrings: "🦵",
   lats: "🏊",
-  "levator scapulae": "🦅",
+  "levator scapulae": "💆",
   pectorals: "🫁",
   quads: "🦵",
   "serratus anterior": "🥊",
-  spine: "🦴",
+  spine: "🏊",
   "traps (upper)": "🏋️",
   traps: "🏋️",
   triceps: "🤜",
-  "upper back": "🦅",
+  "upper back": "🏊",
 };
 
 const EQUIPMENT_COLORS: Record<string, string> = {

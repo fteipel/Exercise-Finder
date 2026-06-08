@@ -1,12 +1,12 @@
 "use client";
 
 const BODY_PART_ICONS: Record<string, string> = {
-  back: "🦴",
+  back: "🏊",
   cardio: "❤️",
   chest: "🫁",
   "lower arms": "🦾",
   "lower legs": "🦵",
-  neck: "🧣",
+  neck: "💆",
   shoulders: "🏋️",
   "upper arms": "💪",
   "upper legs": "🦵",
