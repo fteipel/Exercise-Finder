@@ -45,7 +45,7 @@ export default function BodyPartSelector({ bodyParts, selected, onSelect }: Prop
               ${
                 isSelected
                   ? "bg-indigo-600 border-indigo-600 text-white shadow-lg scale-105"
-                  : "bg-white border-gray-200 text-gray-700 hover:border-indigo-400 hover:text-indigo-600 hover:shadow-md"
+                  : "bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-600 text-gray-700 dark:text-gray-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400 hover:shadow-md"
               }`}
           >
             <span>{BODY_PART_ICONS[part] ?? "🏃"}</span>
