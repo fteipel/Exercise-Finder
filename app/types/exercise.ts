@@ -3,8 +3,10 @@ export interface Exercise {
   name: string;
   bodyPart: string;
   equipment: string;
-  gifUrl: string;
   target: string;
   secondaryMuscles: string[];
   instructions: string[];
+  description?: string;
+  difficulty?: string;
 }
+
