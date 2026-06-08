@@ -7,9 +7,11 @@ interface Props {
   exercises: Exercise[];
   loading: boolean;
   error: string | null;
+  isFavorite: (id: string) => boolean;
+  onToggleFavorite: (exercise: Exercise) => void;
 }
 
-export default function ExerciseGrid({ exercises, loading, error }: Props) {
+export default function ExerciseGrid({ exercises, loading, error, isFavorite, onToggleFavorite }: Props) {
   if (loading) {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
@@ -48,7 +50,12 @@ export default function ExerciseGrid({ exercises, loading, error }: Props) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
       {exercises.map((exercise) => (
-        <ExerciseCard key={exercise.id} exercise={exercise} />
+        <ExerciseCard
+          key={exercise.id}
+          exercise={exercise}
+          isFavorite={isFavorite(exercise.id)}
+          onToggleFavorite={onToggleFavorite}
+        />
       ))}
     </div>
   );

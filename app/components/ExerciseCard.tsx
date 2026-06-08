@@ -45,20 +45,29 @@ function getGradient(equipment: string): string {
 
 interface Props {
   exercise: Exercise;
+  isFavorite: boolean;
+  onToggleFavorite: (exercise: Exercise) => void;
 }
 
-export default function ExerciseCard({ exercise }: Props) {
+export default function ExerciseCard({ exercise, isFavorite, onToggleFavorite }: Props) {
   const [expanded, setExpanded] = useState(false);
   const icon = TARGET_ICONS[exercise.target.toLowerCase()] ?? "🏋️";
   const gradient = getGradient(exercise.equipment);
 
   return (
     <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-200 overflow-hidden hover:-translate-y-0.5">
-      <div className={`bg-gradient-to-br ${gradient} h-36 flex flex-col items-center justify-center gap-2`}>
+      <div className={`relative bg-gradient-to-br ${gradient} h-36 flex flex-col items-center justify-center gap-2`}>
         <span className="text-5xl drop-shadow">{icon}</span>
         <span className="text-white/90 text-xs font-semibold uppercase tracking-widest">
           {exercise.target}
         </span>
+        <button
+          onClick={() => onToggleFavorite(exercise)}
+          aria-label={isFavorite ? "Aus Favoriten entfernen" : "Zu Favoriten hinzufügen"}
+          className="absolute top-2 right-2 w-9 h-9 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/40 transition-colors"
+        >
+          <span className="text-lg">{isFavorite ? "❤️" : "🤍"}</span>
+        </button>
       </div>
 
       <div className="p-4">
