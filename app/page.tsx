@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Exercise } from "./types/exercise";
 import { fetchBodyParts, fetchExercisesByBodyPart } from "./lib/exercisedb";
-import BodyPartSelector from "./components/BodyPartSelector";
+import BodyPartSelector, { BODY_PART_DE } from "./components/BodyPartSelector";
 import ExerciseGrid from "./components/ExerciseGrid";
 
 export default function HomePage() {
@@ -74,8 +74,8 @@ export default function HomePage() {
         {selected && (
           <section>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-800 capitalize">
-                {selected}
+              <h2 className="text-2xl font-bold text-gray-800">
+                {BODY_PART_DE[selected] ?? selected}
               </h2>
               {!loading && exercises.length > 0 && (
                 <span className="text-sm text-gray-500">

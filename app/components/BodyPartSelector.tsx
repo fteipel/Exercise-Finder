@@ -13,6 +13,19 @@ const BODY_PART_ICONS: Record<string, string> = {
   waist: "⭕",
 };
 
+export const BODY_PART_DE: Record<string, string> = {
+  back: "Rücken",
+  cardio: "Cardio",
+  chest: "Brust",
+  "lower arms": "Unterarme",
+  "lower legs": "Unterschenkel",
+  neck: "Nacken",
+  shoulders: "Schultern",
+  "upper arms": "Oberarme",
+  "upper legs": "Oberschenkel",
+  waist: "Bauch",
+};
+
 interface Props {
   bodyParts: string[];
   selected: string | null;
@@ -28,7 +41,7 @@ export default function BodyPartSelector({ bodyParts, selected, onSelect }: Prop
           <button
             key={part}
             onClick={() => onSelect(part)}
-            className={`flex items-center gap-2 px-5 py-3 rounded-full border-2 font-semibold transition-all duration-200 capitalize text-sm
+            className={`flex items-center gap-2 px-5 py-3 rounded-full border-2 font-semibold transition-all duration-200 text-sm
               ${
                 isSelected
                   ? "bg-indigo-600 border-indigo-600 text-white shadow-lg scale-105"
@@ -36,7 +49,7 @@ export default function BodyPartSelector({ bodyParts, selected, onSelect }: Prop
               }`}
           >
             <span>{BODY_PART_ICONS[part] ?? "🏃"}</span>
-            {part}
+            {BODY_PART_DE[part] ?? part}
           </button>
         );
       })}
