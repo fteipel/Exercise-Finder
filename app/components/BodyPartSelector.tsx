@@ -34,14 +34,14 @@ interface Props {
 
 export default function BodyPartSelector({ bodyParts, selected, onSelect }: Props) {
   return (
-    <div className="flex flex-wrap gap-3 justify-center">
+    <div className="flex overflow-x-auto pb-2 gap-2 sm:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible sm:pb-0 scrollbar-hide">
       {bodyParts.map((part) => {
         const isSelected = selected === part;
         return (
           <button
             key={part}
             onClick={() => onSelect(part)}
-            className={`flex items-center gap-2 px-5 py-3 rounded-full border-2 font-semibold transition-all duration-200 text-sm
+            className={`flex items-center gap-2 px-4 py-3 min-h-[44px] shrink-0 rounded-full border-2 font-semibold transition-all duration-200 text-sm
               ${
                 isSelected
                   ? "bg-indigo-600 border-indigo-600 text-white shadow-lg scale-105"
